@@ -24,11 +24,11 @@ export const App = () => {
 
   return (
     <>
-      <header>
-        <h1>ODENDAYO!!</h1>
-      </header>
-      <div>あなたトトロっていうのね！！</div>
-      <img src={dogUrl} />
+      <header className="header">ODENDAYO!!</header>
+      <div className="content">
+        <div className="content_description">あなたトトロっていうのね！！</div>
+        <img src={dogUrl} className="content_img" />
+      </div>
       <div>
         <button onClick={() => fetchDogUrl()}>更新</button>
       </div>
