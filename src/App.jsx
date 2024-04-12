@@ -7,9 +7,14 @@ import './App.css'
  * @type {() => JSX.Element}
  */
 export const App = () => {
-  const [dogUrl] = useState(
-    'https://images.dog.ceo/breeds/affenpinscher/n02110627_11759.jpg',
-  )
+  const FIRST_DOG_URL =
+    'https://images.dog.ceo/breeds/affenpinscher/n02110627_11759.jpg'
+
+  const SECOND_DOG_URL =
+    'https://images.dog.ceo/breeds/hound-english/n02089973_1132.jpg'
+
+  const [dogUrl, setDogUrl] = useState(FIRST_DOG_URL)
+
   return (
     <>
       <header>
@@ -17,6 +22,15 @@ export const App = () => {
       </header>
       <div>あなたトトロっていうのね！！</div>
       <img src={dogUrl} />
+      <div>
+        <button
+          onClick={() => {
+            setDogUrl(SECOND_DOG_URL)
+          }}
+        >
+          更新
+        </button>
+      </div>
     </>
   )
 }
