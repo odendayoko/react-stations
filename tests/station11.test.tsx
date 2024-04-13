@@ -50,12 +50,20 @@ describe('<App />', () => {
 
     expect(button).toBeTruthy()
 
+    if (!button) {
+      return
+    }
+
+    await fireEvent.click(button)
+
     expect(fetch).toBeCalled()
+
     await waitFor(() => {
       const imgList = res.container.querySelectorAll('img')
+      console.log(imgList.length)
       expect(imgList.length).toBeGreaterThan(1)
-      imgList.forEach((img) => {
-        expect(img.src).not.toBe('');
+      imgList.forEach(img => {
+        expect(img.src).not.toBe('')
       })
     })
   })
